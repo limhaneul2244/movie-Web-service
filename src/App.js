@@ -34,23 +34,22 @@ const App = () => {
   )
 }
 
+const Hello = () => {
+
+  useEffect(() => {
+    console.log('hello')
+    return () => {console.log('bye bye')}
+  }, []);
+  return <h1>Hello ^^&</h1>
+}
+
 const CleanUp = () => {
   const [showing, setShowing] = useState(false);
   const onClick = () => setShowing(!showing)
-  // useEffect(() => {
-  //   console.log('Im here!!')
-  // }, [showing]);
-
-  const Test = () => {
-    useEffect(() => {
-      console.log('Im here!!')
-    }, [showing]);
-    return <div>cleanUp hide</div>
-  }
 
   return (
       <>
-        {showing ? <div>cleanUp showing</div> : Test()}
+        {showing ? <Hello /> : <h1>HIDE</h1>}
         <button onClick={onClick}>{showing ? "show" : "hide"}</button>
       </>
   )
