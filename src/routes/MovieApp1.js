@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import Movie from "../components/Movie";
 import PropTypes from "prop-types";
+import Movie from "../components/Movie";
+import styles from "./MovieApp1.module.css";
 
 const MovieApp1 = () => {
     const [loading, setLoading] = useState(true);
@@ -18,10 +19,18 @@ const MovieApp1 = () => {
     return (
         <>
             {loading ? (
-                <h3>Loading</h3>
+                <h3 className={styles.loader}>Loading</h3>
             ) : (
-                movies.map((movie, id) =>
-                <Movie key={movie.id} id={movie.id} largeCoverImage={movie.large_cover_image} title={movie.title} summary={movie.summary} genres={movie.genres} />
+                movies.map((movie) =>
+                    <Movie
+                        key={movie.id}
+                        id={movie.id}
+                        largeCoverImage={movie.medium_cover_image}
+                        title={movie.title}
+                        summary={movie.summary}
+                        genres={movie.genres}
+                        year={movie.year}
+                    />
                 )
             )}
         </>

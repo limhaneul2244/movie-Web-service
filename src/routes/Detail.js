@@ -22,7 +22,7 @@ const Detail = () => {
     return (
         <>
             <div>{detailMovie.title}</div>
-            <img src={detailMovie.large_cover_image}/>
+            <img src={detailMovie.medium_cover_image}/>
             <div>{detailMovie.description_intro}</div>
         </>
     )
