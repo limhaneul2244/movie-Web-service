@@ -14,6 +14,7 @@ const Detail = () => {
     } 
     console.log(detailMovie)
 
+    //axios로 바꿔보기
     
     useEffect(() => {
         getMovie();
