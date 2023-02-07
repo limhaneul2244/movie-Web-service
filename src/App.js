@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/Detail/:id" element={<Detail/>}></Route>
+        <Route path={`${process.env.PUBLIC_URL}/Detail/:id`} element={<Detail/>}></Route>
         <Route path="/" element={<MovieApp1 />}></Route>
       </Routes>
     </Router>
