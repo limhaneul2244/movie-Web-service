@@ -4,11 +4,12 @@ import MovieApp1 from "./routes/MovieApp1";
 import Detail from "./routes/Detail";
 
 const App = () => {
+  console.log(process.env);
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         {/* <Route path={"Detail/:id"} element={<Detail/>}></Route> */}
-        <Route path={`${process.env.PUBLIC_URL}/Detail/:id`} element={<Detail/>}></Route>
+        <Route path="/Detail/:id" element={<Detail/>}></Route>
         <Route path="/" element={<MovieApp1 />}></Route>
       </Routes>
     </Router>
